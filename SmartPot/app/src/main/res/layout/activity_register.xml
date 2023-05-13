@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register" android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/first_name"
+            android:textSize="20sp"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
+            android:hint="First name"
+            android:singleLine="true"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/last_name"
+            android:textSize="20sp"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Last name"
+            android:singleLine="true"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toBottomOf="@id/first_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/email"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="E-mail"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toBottomOf="@id/last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <EditText
+            android:id="@+id/password"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Password"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toBottomOf="@id/email"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/confirm_password"
+            android:textSize="20sp"
+            android:inputType="textPassword"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_margin="20dp"
+            android:hint="Confirm password"
+            android:textColorHint="@color/hint_text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/password"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <Button
+            android:id="@+id/register_button"
+            android:text="Register"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/confirm_password"
+            app:layout_constraintStart_toStartOf="@id/email"
+            app:layout_constraintEnd_toEndOf="@id/email"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

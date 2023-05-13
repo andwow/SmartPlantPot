@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="moisture_progress" type="id" />
+    <item name="moisture_text" type="id" />
+    <item name="temperature_progress" type="id" />
+    <item name="percentage_moisture_text" type="id" />
+    <item name="temperature_text" type="id" />
+    <item name="moisture_slidebar_edittext" type="id" />
+    <item name="moisture_sliderbar" type="id" />
+    <item name="percentage_temperature_text" type="id" />
+    <item name="water_button" type="id" />
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SwitchStyle" parent="Theme.AppCompat.Light">
+        <!-- active thumb & track color (30% transparency) -->
+        <item name="colorControlActivated">#FF6A0FFB</item>
+
+        <!-- inactive thumb color -->
+        <item name="colorSwitchThumbNormal">@color/text_color
+        </item>
+
+        <!-- inactive track color (30% transparency) -->
+        <item name="android:colorForeground">@color/text_color
+        </item>
+    </style>
+</resources>

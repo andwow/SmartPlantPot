@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    //Moisture
+    <ProgressBar
+        android:id="@+id/moisture_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminateOnly="false"
+        app:layout_constraintDimensionRatio="1:1"
+        android:progressDrawable="@drawable/moisture_circle"
+        android:progress="0"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/moisture_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/temperature_progress" />
+
+    <TextView
+        android:id="@+id/percentage_moisture_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="0.00%"
+        android:textSize="30dp"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@id/moisture_progress"
+        app:layout_constraintLeft_toLeftOf="@id/moisture_progress"
+        app:layout_constraintRight_toRightOf="@id/moisture_progress"
+        app:layout_constraintTop_toTopOf="@id/moisture_progress" />
+
+    <TextView
+        android:id="@+id/moisture_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Moisture"
+        android:textSize="25dp"
+        android:textColor="@color/text_color"
+        app:layout_constraintLeft_toLeftOf="@id/moisture_progress"
+        app:layout_constraintRight_toRightOf="@id/moisture_progress"
+        app:layout_constraintTop_toBottomOf="@id/moisture_progress"/>
+
+    // Temperature
+    <ProgressBar
+        android:id="@+id/temperature_progress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/temperature_circle"
+        android:progress="0"
+        app:layout_constraintStart_toEndOf="@id/moisture_progress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/moisture_progress"
+        app:layout_constraintBottom_toBottomOf="@id/moisture_progress"/>
+
+    <TextView
+        android:id="@+id/percentage_temperature_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="0.00°C"
+        android:textSize="30dp"
+        android:textColor="@color/text_color"
+        app:layout_constraintBottom_toBottomOf="@id/temperature_progress"
+        app:layout_constraintLeft_toLeftOf="@id/temperature_progress"
+        app:layout_constraintRight_toRightOf="@id/temperature_progress"
+        app:layout_constraintTop_toTopOf="@id/temperature_progress" />
+
+    <TextView
+        android:id="@+id/temperature_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Temperature"
+        android:textColor="@color/text_color"
+        android:textSize="25dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintLeft_toLeftOf="@id/temperature_progress"
+        app:layout_constraintRight_toRightOf="@id/temperature_progress"
+        app:layout_constraintTop_toBottomOf="@id/temperature_progress"/>
+
+    <RelativeLayout
+        android:id="@+id/light_status"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/light_off"
+        app:layout_constraintTop_toBottomOf="@id/moisture_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="20dp">
+
+        <TextView
+            android:id="@+id/light_status_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="NO LIGHT"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </RelativeLayout>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/pump_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/light_status"
+        app:layout_constraintStart_toStartOf="@id/optimum_moisture"
+        android:layout_marginTop="35dp"
+        android:text="Pump switch:  "
+        android:textColor="@color/text_color"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColorHint="@color/purple_500"
+        android:theme="@style/SwitchStyle" />
+
+    <TextView
+        android:id="@+id/optimum_moisture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pump_switch"
+        android:layout_marginTop="45dp"
+        android:textColor="@color/text_color"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Optimum moisture percentage: 0%"/>
+
+
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/moisture_sliderbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:valueFrom="0"
+        android:valueTo="80"
+        android:value="0"
+        android:stepSize="1"
+        android:layout_marginRight="10dp"
+        app:tickVisible="false"
+        app:haloColor="@color/purple_200"
+        app:thumbColor="@color/purple_500"
+        app:trackColorActive="@color/purple_500"
+        app:trackColorInactive="@color/purple_700"
+        app:layout_constraintTop_toBottomOf="@id/optimum_moisture"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/temperature_progress"/>
+
+    //Light intensity
+    <!--    <ProgressBar-->
+    <!--        android:id="@+id/light_progress"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:indeterminateOnly="false"-->
+    <!--        android:progressDrawable="@drawable/light_circle"-->
+    <!--        android:progress="50"-->
+    <!--        app:layout_constraintStart_toEndOf="@id/temperature_progress"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/temperature_progress"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/temperature_progress" />-->
+
+    <!--    <TextView-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:gravity="center"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+    <!--        android:text="50%"-->
+    <!--        android:textSize="30dp"-->
+    <!--        android:textColor="@color/text_color"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/light_progress"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/light_progress"-->
+    <!--        app:layout_constraintRight_toRightOf="@id/light_progress"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/light_progress" />-->
+
+    <!--    <TextView-->
+    <!--        android:id="@+id/light_text"-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+    <!--        android:text="Light intensity"-->
+    <!--        android:textColor="@color/text_color"-->
+    <!--        android:textSize="25dp"-->
+    <!--        app:layout_constraintLeft_toLeftOf="@id/light_progress"-->
+    <!--        app:layout_constraintRight_toRightOf="@id/light_progress"-->
+    <!--        app:layout_constraintTop_toTopOf="@id/temperature_text"-->
+    <!--        app:layout_constraintBottom_toBottomOf="@id/temperature_text" />-->
+
+    //Water button
+    <Button
+        android:id="@+id/water_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:text="Water now"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintDimensionRatio="6:1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/moisture_sliderbar"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

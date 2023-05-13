@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddDevice"
+    android:background="@color/black">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <EditText
+            android:id="@+id/device_name"
+            android:textSize="20sp"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
+            android:hint="Enter a name for your SmartPot"
+            android:singleLine="true"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/device_description"
+            android:textSize="20sp"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Enter a short description"
+            android:singleLine="true"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toBottomOf="@id/device_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <EditText
+            android:id="@+id/product_id"
+            android:inputType="textEmailAddress"
+            android:textSize="20sp"
+            android:backgroundTint="@color/text_color"
+            android:textColor="@color/text_color"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:hint="Enter the Product ID of your SmartPot"
+            android:textColorHint="@color/hint_text_color"
+            app:layout_constraintTop_toBottomOf="@id/device_description"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <Button
+            android:id="@+id/add_button"
+            android:text="Add the SmartPot"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="30dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/product_id"
+            app:layout_constraintStart_toStartOf="@id/product_id"
+            app:layout_constraintEnd_toEndOf="@id/product_id"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
